@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,58 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.App{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
+.text{
+  width: 62%;
+  height: 45px;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+input:focus{ outline-color: lightskyblue; }
+.btn{
+  border: none;
+  color: white;
+  height: 45px;
+  width: 60px;
+  background-color: green;
+  margin-left: 20%;
+  margin-top: 2%;
+  border-radius: 5px;
+}
+.line{
+  width: 62%;
+background-color: rgb(209, 220, 220);
+  height: 5px;
+  margin-left: 20%;
+  margin-top: 1%;
+}
+.boxes{
+  display: flex;
+}
+.box{
+  width: 52%;
+  height: 45px;
+  margin-left: 20%;
+  margin-top: 5%;
+  background-color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-remove{
+  margin-top: 5%;
+  border: none;
+  color: white;
+  height: 45px;
+  width: 80px;
+  background-color: red;
+  margin-left: 2%;
+  border-radius: 5px;
 }

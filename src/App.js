@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import{userAdd,userRemove} from "../src/Redux/addUserSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
+import { useState } from 'react';
+import UserLists from './UserLists';
 function App() {
+  const dispatch = useDispatch();
+  
+  const [userDetails,setUserDetails] = useState({id:"", userDetails:""})
+
+
+  const onsave=(e)=>{
+    e.preventDefault();
+    if(userDetails){
+      dispatch(
+        userAdd(
+          {id:nanoid(),
+            userDetails
+          })
+          );
+          
+    }
+    setUserDetails({
+      id: "",
+      userDetails: "",
+    })
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+  <div className='App'>
+    
+      <input type="text" className='text' onChange={(e) => {setUserDetails(e.target.value)}} />
+      <button className='btn' onClick={onsave}>ADD</button>
+   
+   
+    <div className='line'></div>
+    <UserLists />
+    
+   
+    
+  </div>
+    </>
   );
 }
 
